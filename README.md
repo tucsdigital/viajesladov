@@ -511,21 +511,18 @@ query(collection(db, 'categorias'),
 
 ### Vercel (Recomendado)
 
-1. **Conectar repositorio:**
-   - Ve a [Vercel Dashboard](https://vercel.com/dashboard)
-   - Importa tu repositorio de GitHub
+Importá el repositorio en [Vercel](https://vercel.com/dashboard) como un proyecto Next.js, con el directorio raíz en `.`. El sitio principal se sirve en `/` y conserva sus rutas, incluidas sus APIs.
 
-2. **Configurar variables de entorno:**
-   - Agrega todas las variables de `.env.local`
-   - Especialmente `BLOB_READ_WRITE_TOKEN`
+Cargá en Vercel las variables que usa el sitio principal: Firebase (cliente y Admin), Cloudflare R2, Resend si se usa para el Club y `NEXT_PUBLIC_SITE_URL` con el dominio final. No subas `.env.local` al repositorio.
 
-3. **Deploy:**
-   - Vercel detecta Next.js automáticamente
-   - Deploy en cada push a `main`
+La API de subida conserva su máximo de 30 segundos. Con [Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute), la memoria de las funciones se configura desde el panel de Vercel, no desde `vercel.json`.
 
-4. **Configurar dominio:**
-   - Agrega tu dominio personalizado
-   - Actualiza `NEXT_PUBLIC_SITE_URL` en variables de entorno
+Para probar desde la raíz con Node.js 24:
+
+```bash
+npm ci
+npm run build
+```
 
 ### Otras Plataformas
 

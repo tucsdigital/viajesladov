@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, MapPin, Phone, Mail, Clock } from 'lucide-react';
-import { CONTACT_INFO, SOCIAL_MEDIA, SITE_NAME, LEGAL_INFO } from '@/lib/constants';
+import { CONTACT_INFO, SOCIAL_MEDIA, SITE_NAME, SITE_DESCRIPTION, LEGAL_INFO } from '@/lib/constants';
 
 const ThreadsIcon = ({ className }: { className?: string }) => (
   <svg
@@ -48,7 +48,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm font-body leading-snug">
-              Preparando los motores para la nueva temporada. Muy pronto lanzamos la nueva web.
+              {SITE_DESCRIPTION}
             </p>
           </div>
 
@@ -199,4 +199,3 @@ export default function Footer() {
     </footer>
   );
 }
-
